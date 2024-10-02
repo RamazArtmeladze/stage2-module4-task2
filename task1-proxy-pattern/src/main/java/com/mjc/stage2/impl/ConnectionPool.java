@@ -35,7 +35,7 @@ public class ConnectionPool {
     public Connection getConnection() {
         ProxyConnection connection = freeConnections.poll();
         usedConnections.offer(connection);
-        return connection;
+        return (Connection) connection;
     }
 
     public void releaseConnection(Connection connection) {
